@@ -1,13 +1,7 @@
-<div class="container">
-    <h1>Angular Two-Way Binding Example</h1>
-
-    <div class="form-group">
-        <label for="nameInput">Enter your name:</label>
-        <input id="nameInput" type="text" [(ngModel)]="name" placeholder="Type something..." class="form-control">
-    </div>
-
-    <div class="output-box">
-        <p *ngIf="name">Hello, <strong>{{ name }}</strong>!</p>
-        <p *ngIf="!name">Please enter your name above.</p>
-    </div>
-</div>
+<ul>
+  <li><a routerLinkActive="active" routerLink="/home" >Home</a></li>
+  <li><a routerLinkActive="active"  routerLink="/about" >About</a></li>
+  <li><a routerLinkActive="active"  routerLink="/contact" >Contact</a></li>
+  <li><a routerLinkActive="active"  routerLink="/service" >Products</a></li>
+</ul>
+<router-outlet/>
