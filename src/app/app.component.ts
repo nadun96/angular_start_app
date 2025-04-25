@@ -6,7 +6,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NgIf],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,7 +19,7 @@ export class AppComponent{
     },
     {
       name: 'Jane Smith',
-      age: 25,
+      // age: 25,
     },
     {
       name: 'Alice Johnson',

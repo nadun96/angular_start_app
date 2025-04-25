@@ -1,13 +1,7 @@
 <!-- safe navigation opertaor -->
 <ul>
-    <li>
-        name : {{customer[0]?.name}} => age{{customer[0]?.age}}
-    </li>
-    <li>
-        name : {{customer[1]?.name}} => age{{customer[1]?.age}}
-    </li>
-    <li>
-        name : {{customer[2]?.name}} => age{{customer[3]?.age}}
+    <li *ngFor="let item of customer; index as myIndex">
+        {{(myIndex+1)}} | name: {{item?.name }} => age : {{item?.age }}
     </li>
 
 </ul>
