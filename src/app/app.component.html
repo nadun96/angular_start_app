@@ -1,3 +1,13 @@
-<button (click)="state=!state">{{state? 'Hide' :'Show'  }}</button>
-<hr>
-<div *ngIf="state"></div>
+<!-- safe navigation opertaor -->
+<ul>
+    <li>
+        name : {{customer[0]?.name}} => age{{customer[0]?.age}}
+    </li>
+    <li>
+        name : {{customer[1]?.name}} => age{{customer[1]?.age}}
+    </li>
+    <li>
+        name : {{customer[2]?.name}} => age{{customer[3]?.age}}
+    </li>
+
+</ul>
