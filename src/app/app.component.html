@@ -1,7 +1,13 @@
-<!-- safe navigation opertaor -->
-<ul>
-    <li *ngFor="let item of customer; index as myIndex">
-        {{(myIndex+1)}} | name: {{item?.name }} => age : {{item?.age }}
-    </li>
+<div class="container">
+    <h1>Angular Two-Way Binding Example</h1>
 
-</ul>
+    <div class="form-group">
+        <label for="nameInput">Enter your name:</label>
+        <input id="nameInput" type="text" [(ngModel)]="name" placeholder="Type something..." class="form-control">
+    </div>
+
+    <div class="output-box">
+        <p *ngIf="name">Hello, <strong>{{ name }}</strong>!</p>
+        <p *ngIf="!name">Please enter your name above.</p>
+    </div>
+</div>
