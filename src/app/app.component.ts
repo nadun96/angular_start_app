@@ -19,4 +19,7 @@ export class AppComponent{
   changeFontSize() {
     this.fontSize = this.fontSize === "30px" ? "50px" : "30px";
   }
+  printData(value:any) {
+    console.log(value);
+  }
 }
