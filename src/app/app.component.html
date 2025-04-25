@@ -4,4 +4,4 @@
 <br>
 <button [class.active]="isActive" [style.font-size]="fontSize" (click)="changeFontSize()" type="button">ClickMe</button>
 <br>
-<input type="text" #inputRef (keyup)="printData(inputRef.value)">
+<input type="text" #inputRef (keyup.enter)="printData(inputRef.value)">
