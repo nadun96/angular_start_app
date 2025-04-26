@@ -1,6 +1,4 @@
-<div class="outer" *ngFor="let cus of customers">
-    <img [src]="cus?.avatar" alt="" width="250px">
-    <h2>Id: {{cus?.id}}</h2>
-    <h2>Name: {{cus?.name}}</h2>
-    <p>Salary: {{cus?.salary}}</p>
-</div>
+<app-customer-template
+  *ngFor="let cus of customers"
+  [customer]="cus"
+></app-customer-template>

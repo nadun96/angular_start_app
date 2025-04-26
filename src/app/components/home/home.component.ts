@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import {NgForOf, NgOptimizedImage} from '@angular/common';
+import {CurrencyPipe, NgForOf, NgOptimizedImage} from '@angular/common';
+import {CustomerTemplateComponent} from '../customer-template/customer-template.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     NgForOf,
-    NgOptimizedImage
+    NgOptimizedImage,
+    CurrencyPipe,
+    CustomerTemplateComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

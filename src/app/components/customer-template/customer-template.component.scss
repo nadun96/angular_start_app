@@ -1,0 +1,15 @@
+.outer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+.img {
+  height: 100px;
+  width: 60px;
+  margin: 10px 10px;
+}
+.div{
+  position: relative;
+  top: 30px;
+}
