@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CurrencyPipe, NgForOf, NgOptimizedImage} from '@angular/common';
+import { NgForOf, NgOptimizedImage} from '@angular/common';
 import {CustomerTemplateComponent} from '../customer-template/customer-template.component';
 
 @Component({
@@ -7,8 +7,6 @@ import {CustomerTemplateComponent} from '../customer-template/customer-template.
   standalone: true,
   imports: [
     NgForOf,
-    NgOptimizedImage,
-    CurrencyPipe,
     CustomerTemplateComponent
   ],
   templateUrl: './home.component.html',
