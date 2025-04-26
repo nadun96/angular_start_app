@@ -1,4 +1,5 @@
 <hr>
-<app-search-bar-template></app-search-bar-template>
+<app-search-bar-template (searchEmitter)="setSearchText($event)"></app-search-bar-template>
 <hr>
 <p>service works!</p>
+search text : {{searchText}}

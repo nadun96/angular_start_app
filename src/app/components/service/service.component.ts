@@ -10,5 +10,10 @@ import {SearchBarTemplateComponent} from '../search-bar-template/search-bar-temp
   styleUrl: './service.component.scss'
 })
 export class ServiceComponent {
+  searchText: string = '';
+
+  setSearchText(vale: string) {
+    this.searchText = vale;
+  }
 
 }
