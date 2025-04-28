@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<button (click)="getAllPhotos()" class="btn btn-primary">Get Data</button>
+<hr>
+<h1>Photos</h1>
+<table class="table table-hover">
+<tr>
+  <th>ID</th>
+  <th>Title</th>
+  <th>URL</th>
+  <th>Thumbnail URL</th>
+</tr>
+<tr *ngFor="let photo of photos">
+  <td>{{ photo.id }}</td>
+  <td>{{ photo.title }}</td>
+  <td><img [src]="photo?.url" alt="Photo" width="100"></td>
+  <td><img [src]="photo?.thumbnailUrl" alt="Thumbnail" width="50"></td>
+</table>
+<hr>
+<h1>Comments</h1>
+<table class="table table-hover">
+  <tr>
+    <th>Post ID</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Body</th>
+  </tr>
+  <tr *ngFor="let comment of comments">
+    <td>{{ comment.postId }}</td>
+    <td>{{ comment.id }}</td>
+    <td>{{ comment.name }}</td>
+    <td>{{ comment.email }}</td>
+    <td>{{ comment.body }}</td>
+  </tr>
+
+
+</table>

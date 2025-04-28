@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {PhotosDto} from '../dto/PhtoosDto';
+import {Photos} from '../dto/Photos';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,8 @@ export class PhotosService {
 
   constructor(private _http:HttpClient) {}
 
-  findAllPhotos():Observable<any>{
-    return this._http.get(`${this.baseUrl}/photos`);
+  findAllPhotos():Observable<PhotosDto[]>{
+    return this._http.get<Photos[]>(`${this.baseUrl}/photos`);
   }
 
   findAllComments():Observable<any>{
