@@ -20,9 +20,12 @@ export class ContactComponent {
 
 
   getAllPhotos() {
-    this._photosService.findAllPhotos().subscribe((data) => {
-    this.photos = data;
-    });
+    this._photosService.findAllPhotos().subscribe({
+        next: (data) => this.photos = data,
+        error: (error) => console.log(error),
+        complete: () => console.log('All photos loaded'),
+      }
+    );
   }
 
   getAllComments(){
