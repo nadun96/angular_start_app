@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {debounceTime, Observable} from 'rxjs';
+import {debounceTime, Observable, Subject} from 'rxjs';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
@@ -14,13 +14,12 @@ export class AboutComponent implements OnInit{
 
   searchText = new FormControl();
   ngOnInit() {
-   /* this.searchText.valueChanges.subscribe(
-     ()=>{
-     console.log('searchText', this.searchText.value);
-     }
-   )*/
-    this.searchText.valueChanges.pipe(
-      debounceTime(3000)
-    ).subscribe((value)=>console.log(value))
+    const subject = new Subject<string>();
+    subject.subscribe((value)=>{console.log(`Subscriber 1 ${value}`)})
+    subject.next("Text 1");
+    subject.next("Text 2");
+    subject.next("Text 3");
+    subject.subscribe((value) => {console.log(`Subscriber 2 ${value}`)})
+    subject.next("Text 4");
   }
 }
