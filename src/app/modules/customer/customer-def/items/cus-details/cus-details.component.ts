@@ -19,14 +19,24 @@ export class CusDetailsComponent implements OnInit{
   selectedCustomer:any=undefined;
   constructor( private _activatedRoute: ActivatedRoute, private _todosService:TodosService){}
   ngOnInit() {
-    this.customerId =  this._activatedRoute.snapshot.params['id'];
-    this.loadCustomerDetails(this.customerId);
+    // this.customerId =  this._activatedRoute.snapshot.params['id'];
+    this._activatedRoute.paramMap.subscribe(
+      res=>{
+        this.customerId = res.get('id');
+        console.log(this.customerId);
+        this.loadCustomerDetails(this.customerId);
+      }
+    )
   }
   loadCustomerDetails(customerId:any){
    this._todosService.getTodoData(customerId).subscribe(
      response => {
         this.selectedCustomer= response;
         console.log(this.selectedCustomer);
+        window.scrollTo(
+          0,
+          0
+        )
      }
    )
 
