@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TodosService} from '../../../../../services/todos.service';
 import {NgForOf} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-cus-list',
@@ -14,7 +14,7 @@ import {RouterLink} from '@angular/router';
 })
 export class CusListComponent implements OnInit{
   todos :any[] = [];
-  constructor(private _todosService:TodosService) {}
+  constructor(private _todosService:TodosService, private _router:Router) {}
 
   ngOnInit() {
     this.loadAllTodos();
@@ -28,6 +28,10 @@ export class CusListComponent implements OnInit{
       complete:()=>console.log("All todos loaded"),
       }
     )
+  }
+
+  loadPage(id:any){
+    this._router.navigateByUrl(`/customer/default-customer/detail/${id}`);
   }
 
 }
