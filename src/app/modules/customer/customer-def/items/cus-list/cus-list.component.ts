@@ -31,7 +31,7 @@ export class CusListComponent implements OnInit{
   }
 
   loadPage(id:any){
-    this._router.navigateByUrl(`/customer/default-customer/detail/${id}`);
+    this._router.navigate([`/customer/default-customer/detail/${id}`]);
   }
 
 }
