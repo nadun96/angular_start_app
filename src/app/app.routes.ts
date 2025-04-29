@@ -12,5 +12,16 @@ export const routes: Routes = [
   {path:'about', component:AboutComponent},
   {path:'contact', component:ContactComponent},
   {path:'service', component:ServiceComponent},
+
+  {path:'customer',
+    loadChildren:()=>import('./modules/customer/customer.module')
+      .then(m=>m.CustomerModule)},
+  {path:'order',
+    loadChildren:()=>import('./modules/order/order.module')
+      .then(m=>m.OrderModule)},
+  {path:'product',
+    loadChildren:()=>import('./modules/product/product.module')
+      .then(m=>m.ProductModule)},
+
   {path:'**', component:NotFoundComponent},
 ];

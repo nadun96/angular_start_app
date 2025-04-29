@@ -1,0 +1,25 @@
+<p>cus-details works!</p>
+<hr>
+<table>
+  <thead>
+  <tr>
+    <th>Customer ID</th>
+    <th>Customer userId</th>
+    <th>Customer title</th>
+    <th>Customer status</th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <tr *ngIf="selectedCustomer" routerLink="/customer/default-customer/detail/{{selectedCustomer?.id}}">
+    <td>{{selectedCustomer?.id}}</td>
+    <td>{{selectedCustomer?.userId}}</td>
+    <td>{{selectedCustomer?.title}}</td>
+    <td>{{selectedCustomer?.completed ? 'Completed': 'Pending'}}</td>
+  </tr>
+  </tbody>
+</table>
+<hr>
+<app-cus-list></app-cus-list>
+<hr>

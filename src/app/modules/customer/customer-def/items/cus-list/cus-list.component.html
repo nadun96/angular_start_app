@@ -1,0 +1,21 @@
+<p>cus-list works!</p>
+<h1 >Customer List</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Customer ID</th>
+      <th>Customer userId</th>
+      <th>Customer title</th>
+      <th>Customer status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let customer of todos" routerLink="/customer/default-customer/detail/{{customer?.id}}">
+      <td>{{customer?.id}}</td>
+      <td>{{customer?.userId}}</td>
+      <td>{{customer?.title}}</td>
+      <td>{{customer?.completed ? 'Completed': 'Pending'}}</td>
+    </tr>
+  </tbody>
+</table>
