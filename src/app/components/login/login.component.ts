@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {TokenManagerService} from '../../services/token-manager.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,11 +14,13 @@ import {Router} from '@angular/router';
 export class LoginComponent {
   tokenManagerService = inject(TokenManagerService);
   router = inject(Router)
+  activatedRoute = inject(ActivatedRoute)
   newToken : any = '';
 
   setToken() {
     this.tokenManagerService.setToken('access_token',this.newToken);
     console.log('Token set: ', this.newToken);
+    console.log(this.activatedRoute.url)
     this.router.navigateByUrl("/dashboard");
   }
 
