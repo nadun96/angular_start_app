@@ -8,6 +8,7 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {LoginComponent} from './components/login/login.component';
 import {authGuard} from './gurads/auth.guard';
+import {StudentComponent} from '../../student/student.component';
 
 export const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {path:'service', component:ServiceComponent},
   {path:'dashboard', component:DashboardComponent,canActivate:[authGuard]},
   {path:'login', component:LoginComponent},
+  {path:'student', component:StudentComponent},
 
   {path:'customer',
     loadChildren:()=>import('./modules/customer/customer.module')
